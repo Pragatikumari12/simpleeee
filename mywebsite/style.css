@@ -1,7 +1,10 @@
+/* Basic styling */
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #f0f0f0;
 }
 
 header {
@@ -9,15 +12,19 @@ header {
     color: white;
     padding: 1rem;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 header h1 {
     margin: 0;
+    animation: fadeIn 2s ease-in-out;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    animation: slideIn 1s ease-in-out;
 }
 
 nav ul li {
@@ -28,11 +35,16 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff6347;
 }
 
 main {
     padding: 2rem;
-    /* background-color: #333; */
+    animation: fadeInUp 1s ease-in-out;
 }
 
 footer {
@@ -43,6 +55,7 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
+    animation: fadeIn 2s ease-in-out;
 }
 
 form {
@@ -52,11 +65,13 @@ form {
 
 form label {
     margin-top: 1rem;
+    animation: fadeInRight 1s ease-in-out;
 }
 
 form input, form textarea {
     padding: 0.5rem;
     margin-top: 0.5rem;
+    animation: fadeInRight 1s ease-in-out;
 }
 
 form button {
@@ -66,4 +81,31 @@ form button {
     color: white;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s;
+    animation: fadeInRight 1s ease-in-out;
+}
+
+form button:hover {
+    background-color: #ff6347;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInRight {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
 }
